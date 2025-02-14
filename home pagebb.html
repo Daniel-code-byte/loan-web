@@ -1,433 +1,794 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Loan App - Quick and easy Loans</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSAF Loans - Quick and Easy Loans</title>
     <style>
-          body {
-        font-family: 'Poppins', sans-serif;
-        margin: 5;
-        padding: 5;
-        background-image: url(image/pic\ 1.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: #973b3b;
-        font-family: 'Arial', sans-serif;
-        background: #060A13;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-    }
-    .box {
-        width: 100%;
-        margin: 0%;
-        overflow: hidden;
-    }
-    header {
-        background-image: url(image/pic\ 2.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: #2c12d2;
-        padding: 20px ;
-        text-align: center;
-    }
-    nav ul {
-        list-style: none;
-        padding: 10;
-    }
-    nav ul li {
-        display: inline;
-        margin:20px;
-    }
-    nav ul li a {
-        color: #3a3a5c;
-        text-decoration: none;
-    }
-    .main {
-        background-image: url(image/pic\ 3.zip);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: #fff;
-        padding: 50px 0;
-        text-align: center;
-    }
-    .btn {
-        display: inline-block;
-        background: #1f04ef;
-        color: #f4f5f6;
-        padding: 10px 20px;
-        text-decoration: solid;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
-    .features, .Reviews, .apply {
-        padding: 50px;
-        text-align: center;
-    }
-    .feature-list {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    .feature {
-        width: 30%;
-        background: #fff;
-        padding: 20px;
-        margin: 10px;
-        box-shadow: 10px black;
-        border-radius: 55px;
-    }
-    .Reviews-coner{
-        background-color: white;
-        padding: 22px;
-        text-align: center;
-        width: 62%;
-        margin-bottom: 0.1cm;
-        margin-top: 1cm;
-        border-radius: 12px;
-        box-shadow: black;
-    }
-    .Reviews-text{
-        font-size: 17px;
-        font-style: italic;
-        color: black;
-    }
-    .Reviews-sayer{
-        font-size: 16px;
-        font-weight: bold;
-        color: black;
-    }
-    .Reviews{
-        background: #fff;
-        padding: 10px;
-        margin: 10px;
-        box-shadow: 10px black;
-        border-radius: 75px;
-    }
-    bod {
-        font-family: 'Arial', sans-serif;
-        background: #060A13;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-    }
-    
-    h2 {
-        color: #00ffea;
-        font-size: 2.5em;
-    }
-    
-    .apply-now {
-        padding: 12px 24px;
-        background: #ff00ff;
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 20px;
-        display: inline-block;
-        margin-top: 15px;
-    }
-    
-    .testimonials blockquote {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 15px;
-        border-left: 5px solid cyan;
-        margin: 10px 0;
-    }
-    
-    .faq-item {
-        background: rgba(255, 255, 255, 0.08);
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 8px;
-    }
-    /* Loan Progress Bar */
-    .progress-container {
-        width: 100%;
-        background: #222;
-        border-radius: 10px;
-        padding: 5px;
-        margin-top: 10px;
-    }
-    
-    .progress-bar {
-        width: 0%;
-        height: 15px;
-        background: #00ffea;
-        border-radius: 8px;
-        transition: width 1s ease-in-out;
-    }
-    
-    .progress-steps {
-        display: flex;
-        justify-content: space-between;
-        font-size: 12px;
-        margin-top: 5px;
-        color: #fff;
-    }
-    
-    /* Interactive Map */
-    #map {
-        width: 100%;
-        height: 400px;
-        margin-top: 20px;
-        border-radius: 12px;
-    }
-    
-    
-    .layer-seven {
-        color: cyan;
-        font-size: 1.5em;
-    }
-    
-    
-    footer {
-        background: rgb(135, 37, 37);
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 10px;
-    }
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            line-height: 1.6;
+        }
+
+        .box {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            color: #00ffea;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        header {
+            background-image: url(image/pic2.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #00ffea; /* Teal on hover */
+        }
+
+        /* Hero Section */
+        .main {
+            background-image: url(image/pic3.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .main h2 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .main p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1f04ef;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #1503a8;
+            transform: translateY(-5px); /* Lift effect */
+        }
+
+        /* Features Section */
+        .features {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 0;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .feature-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            width: 30%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px); /* Lift effect */
+            box-shadow: 0 8px 16px rgba(0, 255, 234, 0.3); /* Glow effect */
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            color: #00ffea;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        /* Loan Calculator */
+        .calculator {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 0;
+            text-align: center;
+            display: none; /* Hidden by default */
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .calculator h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .calculator input, .calculator select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff; /* White text */
+        }
+
+        .calculator button {
+            background: #1f04ef;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .calculator button:hover {
+            background: #1503a8;
+            transform: translateY(-5px); /* Lift effect */
+        }
+
+        .calculator .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #00ffea;
+        }
+
+        /* Loan Application Form */
+        .form-section {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 0;
+        }
+
+        .form-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .form-tabs button {
+            background-color: #1f04ef;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .form-tabs button.active {
+            background-color: #1503a8;
+        }
+
+        .form-content {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            color: #fff; /* White text */
+        }
+
+        .form-content h3 {
+            font-size: 1.5rem;
+            color: #00ffea; /* Teal for headings */
+            margin-bottom: 20px;
+        }
+
+        .form-content input, .form-content select, .form-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff; /* White text */
+        }
+
+        .form-content textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-content button {
+            background-color: #1f04ef;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+
+        .form-content button.secondary {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        /* Required Documents Section */
+        .required-docs {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .required-docs h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .required-docs ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .required-docs ul li {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            color: #fff; /* White text */
+        }
+
+        /* Loan Approval Progress Bar */
+        .loan-progress {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #222;
+            border-radius: 10px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 15px;
+            background: #00ffea;
+            border-radius: 8px;
+            transition: width 1s ease-in-out;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-top: 5px;
+            color: #fff;
+        }
+
+        /* Customer Success Stories Map */
+        .customer-map {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #map {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        /* AI Chatbot */
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1f04ef;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .faq h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            color: #00ffea;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        /* Terms and Conditions */
+        .terms {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .terms h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .terms p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .terms a {
+            color: #00ffea;
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1503a8;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
-
 </head>
-
 <body>
+    <!-- Header Section -->
     <header>
         <div class="box">
-            <h1>BSAF Loans</h1> 
+            <h1>BSAF Loans</h1>
             <nav>
                 <ul>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#features">Features</a></li>
-                    <li><a href="#Reviews">Reviews</a></li>
                     <li><a href="#apply">Apply Now</a></li>
-                    <li><a href="calculator.html">Loan-calculator</a></li>
-                    <li><a href="contact us">Contact us</a></li>
+                    <li><a href="#calculator">Loan Calculator</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="main">
+    <!-- Hero Section -->
+    <section id="home" class="main">
         <div class="box">
             <h2>Fast & Easy Loans Anytime</h2>
             <p>Get instant loans with minimal paperwork and flexible repayment options.</p>
-            <a href="loan application.html" class="btn">Apply Now</a>
+            <a href="#apply" class="btn">Apply Now</a>
         </div>
-    </section>  
+    </section>
 
+    <!-- Features Section -->
     <section id="features" class="features">
         <div class="box">
-        <h2></h2>
-        <div class="feature-list">
-        <div class="feature">
-        <h3></h3>
-        <p>Get approved swiftly and securely in simple minutes and promptly receive funds without any delay.</p>
+            <h2>Why Choose BSAF Loans?</h2>
+            <div class="feature-list">
+                <div class="feature">
+                    <h3>Instant Approvals</h3>
+                    <p>Get approved swiftly and securely in simple minutes and promptly receive funds without any delay.</p>
+                </div>
+                <div class="feature">
+                    <h3>No Hidden Fees</h3>
+                    <p>Get highly competitive rates that include absolutely zero hidden fees.</p>
+                </div>
+                <div class="feature">
+                    <h3>Flexible Repayment</h3>
+                    <p>Choose the repayment schedule that fits your needs.</p>
+                </div>
+            </div>
         </div>
-        <div class="feature">
-        <h4></h4>
-        <p>Get highly competitive rates that include absolutely zero hidden fees.</p>
-        </div>
-        
-        <div class="Reviews-coner">
-        <p class="Reviews-text">"This loan service is the best because it gives you a repayment plan that works for you."</p>
-        wilson mars -
-        
-        </div>
-        <div class="Reviews-coner">
-        <p class="Reviews-text">"This app saved me during each and every one of my worst moments"</p>
-        <p class="Review-sayer">Thomas Hart, importantly</p>
-        </div> 
     </section>
 
-
-        <main role="main" class="contain">
-            
-            <!-- WHY CHOOSE US SECTION -->
-            <section id="why-bsaf" class="why-bsaf">
-                <div class="structure">
-                    <div class="content-area">
-                        <header class="section-title">
-                            <h2>Why Thousands Trust <span class="highlight">BSaF LOAN</span></h2>
-                            <p class="info">Fast approvals, low interest, and a 99.7% customer satisfaction rate.</p>
-                        </header>
-                        <div class="feat-list">
-                            <ul>
-                                <li>
-                                    <article class="feat-card">
-                                        <h3>🚀 Instant Approvals</h3>
-                                        <p>Loans processed in **minutes** with AI-powered decision-making.</p>
-                                    </article>
-                                </li>
-                                <li>
-                                    <article class="feat-card">
-                                        <h3>🔐 Bank-Level Security</h3>
-                                        <p>All transactions are encrypted, ensuring your **data is protected.**</p>
-                                    </article>
-                                </li>
-                                <li>
-                                    <article class="feat-card">
-                                        <h3>💰 Flexible Loan Terms</h3>
-                                        <p>Choose repayment periods from **6 months to 5 years**.</p>
-                                    </article>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <aside class="image-side">
-                        <img src="cyber-loan.png" alt="Why Choose BSaF Loan">
-                    </aside>
-                </div>
-            </section>
-    
-            <!-- LOAN ELIGIBILITY SECTION -->
-            <section class="loan-eligibility">
-                <h2>📌 Are You Eligible?</h2>
-                <p>Before applying, check if you meet these **basic requirements**:</p>
-                <ul>
-                    <li>✅ Must be **18 years or older**</li>
-                    <li>✅ Have a **stable income source**</li>
-                    <li>✅ Own a **valid national ID**</li>
-                    <li>✅ Have an **active bank or mobile money account**</li>
-                </ul>
-                <a href="#" class="apply-now">Check Your Eligibility Now</a>
-            </section>
-    
-            <!-- CUSTOMER TESTIMONIALS -->
-            <section class="testimonials">
-                <h2>💬 What Our Customers Say</h2>
-                <div class="testimonial-list">
-                    <blockquote>
-                        <p>“BSaF Loan saved my business. Instant approval and no hidden fees. Highly recommended!”</p>
-                        <cite>– James M., Nairobi</cite>
-                    </blockquote>
-                    <blockquote>
-                        <p>“I needed quick cash for an emergency. Within 10 minutes, my loan was approved and sent to my account.”</p>
-                        <cite>– Sarah K., Mombasa</cite>
-                    </blockquote>
-                </div>
-            </section>
-    
-            <!-- SECURITY MEASURES -->
-            <section class="security">
-                <h2>🔒 How We Protect You</h2>
-                <p>At BSaF Loan, we prioritize **your financial security**:</p>
-                <ul>
-                    <li>✅ **End-to-end encryption** to protect personal data.</li>
-                    <li>✅ **Multi-factor authentication** for account access.</li>
-                    <li>✅ **24/7 fraud monitoring** to detect suspicious activity.</li>
-                </ul>
-            </section>
-    
-            <!-- FREQUENTLY ASKED QUESTIONS (FAQ) -->
-            <section class="faq">
-                <h2>❓ Frequently Asked Questions</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <h3>How long does approval take?</h3>
-                        <p>Most applications are processed within **5-10 minutes**.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Are there hidden fees?</h3>
-                        <p>No! We are 100% transparent about our rates.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>What happens if I miss a payment?</h3>
-                        <p>You may incur a **small penalty fee**, but we offer **grace periods**.</p>
-                    </div>
-                </div>
-            </section>
-    <!-- LOAN APPROVAL PROGRESS BAR -->
-<section class="loan-progress">
-    <h2>📊 Your Loan Approval Progress</h2>
-    <p>Track your loan approval in real-time.</p>
-    <div class="progress-container">
-        <div class="progress-bar" id="progress-bar"></div>
-        <div class="progress-steps">
-            <span>Application Submitted</span>
-            <span>Verification</span>
-            <span>Approval</span>
-            <span>Disbursement</span>
+    <!-- Required Documents Section -->
+    <section class="required-docs">
+        <div class="box">
+            <h2>Required Documents (US)</h2>
+            <ul>
+                <li>✅ Valid Government-Issued ID (e.g., Driver's License, Passport)</li>
+                <li>✅ Proof of Income (e.g., Pay Stubs, Tax Returns)</li>
+                <li>✅ Proof of Address (e.g., Utility Bill, Lease Agreement)</li>
+                <li>✅ Social Security Number (SSN)</li>
+                <li>✅ Bank Statements (Last 3 Months)</li>
+            </ul>
         </div>
+    </section>
+
+    <!-- Loan Application Form -->
+    <section id="apply" class="form-section">
+        <div class="box">
+            <h2>Apply for a Loan</h2>
+            <div class="form-tabs">
+                <button class="active" onclick="showTab(1)">Personal Info</button>
+                <button onclick="showTab(2)">Loan Purpose</button>
+                <button onclick="showTab(3)">Education & Work</button>
+                <button onclick="showTab(4)">Income Details</button>
+                <button onclick="showTab(5)">Financials</button>
+                <button onclick="showTab(6)">Next of Kin</button>
+            </div>
+            <div class="form-content">
+                <!-- Personal Info Tab -->
+                <div id="tab1" class="tab">
+                    <h3>Personal Information</h3>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="number" placeholder="Age" required>
+                    <input type="date" placeholder="Date of Birth" required>
+                    <input type="text" placeholder="Address" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <button onclick="showTab(2)">Next</button>
+                </div>
+
+                <!-- Loan Purpose Tab -->
+                <div id="tab2" class="tab" style="display: none;">
+                    <h3>What would you like to use the loan for?</h3>
+                    <select id="loanPurpose" required>
+                        <option value="paybill">Paybill</option>
+                        <option value="personal">Personal Expense</option>
+                        <option value="business">Business</option>
+                        <option value="education">Education</option>
+                        <option value="medical">Medical</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea id="otherPurpose" placeholder="Describe your purpose (if 'Other')..." style="display: none;"></textarea>
+                    <button onclick="showTab(1)">Previous</button>
+                    <button onclick="showTab(3)">Next</button>
+                </div>
+
+                <!-- Education & Work Tab -->
+                <div id="tab3" class="tab" style="display: none;">
+                    <h3>Education & Work Details</h3>
+                    <select required>
+                        <option value="high-school">High School</option>
+                        <option value="diploma">Diploma</option>
+                        <option value="bachelors">Bachelor's Degree</option>
+                        <option value="masters">Master's Degree</option>
+                        <option value="phd">PhD</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select required>
+                        <option value="full-time">Full-Time</option>
+                        <option value="part-time">Part-Time</option>
+                        <option value="gig">Gig Worker</option>
+                        <option value="student">Student</option>
+                        <option value="business">Business Vendor</option>
+                    </select>
+                    <input type="text" placeholder="Name of Business (if any)">
+                    <select required>
+                        <option value="technology">Technology</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="finance">Finance</option>
+                        <option value="retail">Retail</option>
+                        <option value="education">Education</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="text" placeholder="How long have you worked there? (e.g., 2 years)">
+                    <button onclick="showTab(2)">Previous</button>
+                    <button onclick="showTab(4)">Next</button>
+                </div>
+
+                <!-- Income Details Tab -->
+                <div id="tab4" class="tab" style="display: none;">
+                    <h3>Income Details</h3>
+                    <input type="number" placeholder="How frequently do you get paid per month?" required>
+                    <input type="date" placeholder="Next Payout Date" required>
+                    <input type="number" placeholder="Total Earnings in Last 30 Days" required>
+                    <select required>
+                        <option value="salary">Salary</option>
+                        <option value="pension">Government Pension</option>
+                        <option value="beneficiary">Beneficiary</option>
+                        <option value="freelance">Freelance</option>
+                        <option value="investment">Investment Income</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button onclick="showTab(3)">Previous</button>
+                    <button onclick="showTab(5)">Next</button>
+                </div>
+
+                <!-- Financials Tab -->
+                <div id="tab5" class="tab" style="display: none;">
+                    <h3>Financial Details</h3>
+                    <input type="text" placeholder="Do you have any outstanding loans?" required>
+                    <input type="number" placeholder="Amount Spent on Basic Needs (Last 30 Days)" required>
+                    <input type="number" placeholder="Amount Spent on Utility Bills (Last 30 Days)" required>
+                    <input type="number" placeholder="Amount Spent on Loans (Last 30 Days)" required>
+                    <button onclick="showTab(4)">Previous</button>
+                    <button onclick="showTab(6)">Next</button>
+                </div>
+
+                <!-- Next of Kin Tab -->
+                <div id="tab6" class="tab" style="display: none;">
+                    <h3>Next of Kin Details</h3>
+                    <input type="text" placeholder="Full Name" required>
+                    <select required>
+                        <option value="spouse">Spouse</option>
+                        <option value="parent">Parent</option>
+                        <option value="sibling">Sibling</option>
+                        <option value="friend">Friend</option>
+                        <option value="colleague">Work Colleague</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <input type="text" placeholder="Address" required>
+                    <button onclick="showTab(5)">Previous</button>
+                    <button type="submit" onclick="submitForm()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Calculator (Hidden by Default) -->
+    <section id="calculator" class="calculator">
+        <div class="box">
+            <h2>Loan Calculator</h2>
+            <input type="number" id="loanAmount" placeholder="Loan Amount">
+            <input type="number" id="interestRate" placeholder="Interest Rate (%)">
+            <input type="number" id="loanTerm" placeholder="Loan Term (Months)">
+            <button onclick="calculateLoan()">Calculate</button>
+            <div class="result" id="loanResult"></div>
+        </div>
+    </section>
+
+    <!-- Loan Approval Progress -->
+    <section class="loan-progress">
+        <div class="box">
+            <h2>📊 Your Loan Approval Progress</h2>
+            <p>Track your loan approval in real-time.</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <div class="progress-steps">
+                    <span>Application Submitted</span>
+                    <span>Verification</span>
+                    <span>Approval</span>
+                    <span>Disbursement</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Success Stories Map -->
+    <section class="customer-map">
+        <div class="box">
+            <h2>🌍 Customer Success Stories</h2>
+            <p>See where people are securing loans from BSaF!</p>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot" onclick="openChatbot()">
+        💬 Chat with Us
     </div>
-</section>
 
-<!-- INTERACTIVE CUSTOMER SUCCESS MAP -->
-<section class="customer-map">
-    <h2>🌍 Customer Success Stories</h2>
-    <p>See where people are securing loans from BSaF!</p>
-    <div id="map"></div>
-</section>
-
-<script>
-    // Loan Approval Progress Bar Animation
-    let progress = 0;
-    function updateProgress() {
-        progress += 25;
-        if (progress > 100) progress = 100;
-        document.getElementById('progress-bar').style.width = progress + "%";
-    }
-    setInterval(updateProgress, 2000);
-
-    // Interactive Customer Success Map
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 5,
-            center: { lat: -1.286389, lng: 36.817223 }
-        });
-
-        var locations = [
-            { lat: -1.286389, lng: 36.817223, name: "Nairobi" },
-            { lat: -4.043477, lng: 39.668206, name: "Mombasa" },
-            { lat: 0.347596, lng: 32.582520, name: "Kampala" }
-        ];
-
-        locations.forEach(loc => {
-            new google.maps.Marker({
-                position: loc,
-                map: map,
-                title: loc.name
-            });
-        });
-    }
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
-
-            <!-- LEGAL DOCUMENTS SECTION -->
-            <section class="legal">
-                <h2>📜 Important Legal Documents</h2>
-                <p>Before applying for a loan, review our **terms & policies**:</p>
-                <ul>
-                    <li>📄 <a href="#">Privacy Policy</a> – How we protect your data.</li>
-                    <li>📄 <a href="#">Loan Agreement</a> – Understand your rights & obligations.</li>
-                    <li>📄 <a href="#">Terms of Use</a> – BSaF Loan platform guidelines.</li>
-                </ul>
-            </section>
-    
-            <!-- FINAL CALL TO ACTION -->
-            <section class="apply-section">
-                <h2>Ready to Get Your Loan?</h2>
-                <p>Sign up today and receive funds **in minutes**!</p>
-                <a href="#" class="apply-now">Apply Now</a>
-            </section>
-    
-        </main>
-
-    <section id="apply" class="apply">
-        <div class="box      ">
-            <h2 class="apply-text">Apply for a Loan Now</h2>
-            <p>Fill out a simple form and get approved within minutes.</p>
-            <a href="#" class="btn">Get Started</a>
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="box">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How long does approval take?</h3>
+                <p>Most applications are processed within <strong>5-10 minutes</strong>.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are there hidden fees?</h3>
+                <p>No! We are <strong>100% transparent</strong> about our rates.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What happens if I miss a payment?</h3>
+                <p>You may incur a <strong>small penalty fee</strong>, but we offer <strong>grace periods</strong>.</p>
+            </div>
         </div>
     </section>
 
+    <!-- Terms and Conditions -->
+    <section class="terms">
+        <div class="box">
+            <h2>Terms and Conditions</h2>
+            <p>
+                By applying for a loan, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+                Please ensure you meet the eligibility criteria before submitting your application.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
     <footer>
         <div class="box">
-            <p>&copy; 2025 QuickLoan. All rights reserved.</p>
+            <p>&copy; 2025 BSAF Loans. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Loan Calculator Function
+        function calculateLoan() {
+            const amount = parseFloat(document.getElementById('loanAmount').value);
+            const rate = parseFloat(document.getElementById('interestRate').value);
+            const term = parseFloat(document.getElementById('loanTerm').value);
+
+            if (isNaN(amount) || isNaN(rate) || isNaN(term)) {
+                alert('Please fill all fields correctly.');
+                return;
+            }
+
+            const monthlyInterest = rate / 100 / 12;
+            const totalPayments = term;
+            const monthlyPayment = (amount * monthlyInterest) / (1 - Math.pow(1 + monthlyInterest, -totalPayments));
+            const totalPayment = monthlyPayment * totalPayments;
+
+            document.getElementById('loanResult').innerHTML = `
+                Monthly Payment: $${monthlyPayment.toFixed(2)}<br>
+                Total Payment: $${totalPayment.toFixed(2)}
+            `;
+        }
+
+        // Show/hide "Other" textarea for loan purpose
+        document.getElementById('loanPurpose').addEventListener('change', function() {
+            const otherPurposeField = document.getElementById('otherPurpose');
+            otherPurposeField.style.display = this.value === 'other' ? 'block' : 'none';
+        });
+
+        // Tab Switching Logic
+        function showTab(tabNumber) {
+            // Hide all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.style.display = 'none';
+            });
+
+            // Show the selected tab
+            document.getElementById(`tab${tabNumber}`).style.display = 'block';
+
+            // Update active tab button
+            document.querySelectorAll('.form-tabs button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`.form-tabs button:nth-child(${tabNumber})`).classList.add('active');
+        }
+
+        // Loan Approval Progress Bar Animation
+        let progress = 0;
+        function updateProgress() {
+            progress += 25;
+            if (progress > 100) progress = 100;
+            document.getElementById('progress-bar').style.width = progress + "%";
+        }
+        setInterval(updateProgress, 2000);
+
+        // Interactive Customer Success Map
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 5,
+                center: { lat: 37.0902, lng: -95.7129 } // Center on the US
+            });
+
+            var locations = [
+                { lat: 34.0522, lng: -118.2437, name: "Los Angeles" },
+                { lat: 40.7128, lng: -74.0060, name: "New York" },
+                { lat: 41.8781, lng: -87.6298, name: "Chicago" }
+            ];
+
+            locations.forEach(loc => {
+                new google.maps.Marker({
+                    position: loc,
+                    map: map,
+                    title: loc.name
+                });
+            });
+        }
+
+        // Open Chatbot
+        function openChatbot() {
+            alert("Chatbot is not integrated yet. Coming soon!");
+        }
+
+        // Show Loan Calculator After Form Submission
+        function submitForm() {
+            alert('Loan application submitted successfully!');
+            document.querySelector('.calculator').style.display = 'block';
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
